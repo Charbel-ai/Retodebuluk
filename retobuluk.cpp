@@ -17,8 +17,8 @@ int main(){
 
 int tiempototal; 
 char seriedeaccion;
-char boton;
 char seriedeaccion2 = std::toupper(seriedeaccion);
+char boton;
 
 
 std:: cout<< "Incio del periodo autonomo del automata "<<std::endl; 
