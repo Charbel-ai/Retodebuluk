@@ -1,25 +1,36 @@
 #include <iostream>
 #include <string>
+int tiempototal; 
+int tiempo;
+std::string direccion;  
+char seriedeaccion;
+char seriedeaccion2 = std::toupper(seriedeaccion);
+int boton;
 
-void botonA(){
+
+void boton8(){
+std::cout<<"Boton 8: Lado derecho del autonomo"<<std::endl; 
+std::cout<<"Ingrese la direccion:"<<std::endl; 
+std::cin>>direccion; 
+std::cout<<"Ingrese el tiempo:"<<std::endl; 
+std::cin>>tiempo; 
+
 
 }
 
-void botonB(){
+void boton9(){
+std::cout<<"Boton 9: Lado izquierd del autonomo"<<std::endl; 
+
     
 }
 
-void botonAB(){
+void boton89(){
+std::cout<<"Boton 89: Anvanze del autonomo"<<std::endl; 
+
 
 }
 
 int main(){
-
-int tiempototal; 
-char seriedeaccion;
-char seriedeaccion2 = std::toupper(seriedeaccion);
-char boton;
-
 
 std:: cout<< "Incio del periodo autonomo del automata "<<std::endl; 
 std::cout<< "Existen tres opciones: "<<std::endl;
@@ -100,9 +111,28 @@ std::cout<<"El programa teleoperado ha empezado"<<std::endl;
 std:: cout<< " "<<std::endl; 
  //Menu de botones 
 std::cout<<"Exiten tres botones"<<std::endl; 
-std::cout<<"El boton A: Controla el lado derecho de un autonomo"<<std::endl; 
-std::cout<<"El boton B: Controla el lado izquierdo del autonomo"<<std::endl; 
-std::cout<<"El boton AB: Seleccionas los dos botones anteriores, haciendo que el autonomo avanze completamente "<<std::endl; 
+std::cout<<"El boton 8: Controla el lado derecho de un autonomo"<<std::endl; 
+std::cout<<"El boton 9: Controla el lado izquierdo del autonomo"<<std::endl; 
+std::cout<<"El boton 89: Seleccionas los dos botones anteriores, haciendo que el autonomo avanze completamente "<<std::endl; 
+std::cout<<"El boton 4: Al estar enfrente de una pieza este la recoje y cambia de posicion"<<std::endl; 
+std::cout<<"El boton 5: Libera las llantas del autonomo"<<std::endl; 
+std::cout<<"El boton 6: Al ubicar la llantas, estira "<<std::endl; 
+std::cout<<""<<std::endl;
+
+std::cout<<"Elige un boton"<<std::endl;
+std::cin>> boton; 
+
+if (boton == 8){
+ boton8(); 
+}
+
+else if(boton == 9){
+ boton9(); 
+}
+else if (boton == 89){
+
+boton89();
+}
 
 
 
