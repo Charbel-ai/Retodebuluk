@@ -18,14 +18,19 @@ int main(){
 int tiempototal; 
 char seriedeaccion;
 char boton;
+char seriedeaccion2 = std::toupper(seriedeaccion);
 
-std:: cout<< "Estas son las series de acciones que tu automata puede reliazar de forma autonoma "<<std::endl; 
+
+std:: cout<< "Incio del periodo autonomo del automata "<<std::endl; 
 std::cout<< "Existen tres opciones: "<<std::endl;
 std:: cout<< " "<<std::endl; 
+
+do{
 std:: cout<< "Opcion A: Tarda 10 segundo en realizarse "<<std::endl; 
 std:: cout<< "Opcion B: Tarda 13 segundos en relizarse "<<std::endl; 
 std:: cout<< "Opcion C: Tarda 15 segundo en relizarse "<<std::endl; 
 std:: cout<< " "<<std::endl; 
+
 std:: cout<< "Elige tu opcion: "<<std::endl; 
 std:: cin>> seriedeaccion; 
 
@@ -41,7 +46,7 @@ std:: cout<<"El autonomo se detuvo y gire 180 grados, volviendo a la direccion d
 std:: cout<<"El autonomo avanzo tres metros volviendo al lugar donde empezo, tardo: 3 segundos"<<std::endl; 
 std:: cout<<"El tiempo total de accion fue de: "<< tiempototal<<" segundos"<<std::endl; 
 std:: cout<<"Quedan 5 segundos del programa autonomo"<<std::endl; 
-
+break; 
 }
 
 //La serie de accion B hara que el autónomo avanza 4 metros, se detenga, gire su propio eje volviendo a la misma posicion donde estaba
@@ -54,14 +59,13 @@ std:: cout<<"El autonomo retrocedio 2 metros, tardo: 2 segundos"<<std::endl;
 std:: cout<<"El autonomo avanzo 4 metros, tardo: 4 segundos"<<std::endl; 
 std:: cout<<"El tiempo total de accion fue de: "<< tiempototal<< " segundos"<<std::endl; 
 std:: cout<<"Quedan 2 segundos del programa autonomo"<<std::endl; 
-
+break; 
 }
 
 //La serie de accion C, avanzara 5 metros y se detendra.
 //Despues girara 90 grados a la derecha
 //Avanzara 4 metros y se detendra
 //Girara 180 grados y avanzara 4 metros 
-
 else if (seriedeaccion2 == 'C'){
 tiempototal = 15; 
 std:: cout<<"El autonomo avanzo cinco metros, tardo: 5 segundos"<<std::endl; 
@@ -71,10 +75,20 @@ std:: cout<<"El autonomo se detuvo y giro 180 grados, tardo: 4 segundos"<<std::e
 
 std:: cout<<"El tiempo total de accion fue de: "<< tiempototal<< " segundos"<<std::endl; 
 std:: cout<<"El tiempo de autonomo fue terminado completamente"<<std::endl; 
+break; 
 }
- std:: cout<< " "<<std::endl; 
+
+else if ( 'B' != seriedeaccion2 != 'A' && 'C' != seriedeaccion2){
+    std::cout<<"Ingrese una opcion que exista"<<std::endl; 
+}
+}
+while ('B' != seriedeaccion2 != 'A' && 'C' != seriedeaccion2);
+
+
+
 
 //Inicio del programa teleoperado
+std::cout<<""<<std::endl; 
 std::cout<<"Ingrese T para pasar al programa teleoperado"<<std::endl; 
 std::cin>> boton;
   char boton2 = std::toupper(boton);
@@ -82,7 +96,8 @@ std::cin>> boton;
 if (boton2 == 'T' ){
 std::cout<<"El programa teleoperado ha empezado"<<std::endl; 
 }
- std:: cout<< " "<<std::endl; 
+ 
+std:: cout<< " "<<std::endl; 
  //Menu de botones 
 std::cout<<"Exiten tres botones"<<std::endl; 
 std::cout<<"El boton A: Controla el lado derecho de un autonomo"<<std::endl; 
@@ -92,5 +107,5 @@ std::cout<<"El boton AB: Seleccionas los dos botones anteriores, haciendo que el
 
 
 
-
+return 0;
 }
