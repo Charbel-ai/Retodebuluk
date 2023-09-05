@@ -1,7 +1,9 @@
 #include <iostream>
 #include <string>
+
 int tiempototal; 
 int tiempo;
+int distancia; 
 std::string direccion;  
 char seriedeaccion;
 char seriedeaccion2 = std::toupper(seriedeaccion);
@@ -9,24 +11,42 @@ int boton;
 
 
 void boton8(){
-std::cout<<"Boton 8: Lado derecho del autonomo"<<std::endl; 
-std::cout<<"Ingrese la direccion:"<<std::endl; 
-std::cin>>direccion; 
-std::cout<<"Ingrese el tiempo:"<<std::endl; 
-std::cin>>tiempo; 
 
+std::cout<<"Boton 8: Lado derecho del autonomo"<<std::endl; 
+std::cout<<"Ingrese la direccion: "<<std::endl; 
+std::cin>>direccion; 
+std::cout<<"Ingrese el tiempo: "<<std::endl; 
+std::cin>>tiempo; 
+std::cout<<"Ingrese la distancia: "<<std::endl; 
+std::cin>>distancia; 
+std::cout<<""<<std::endl; 
+std::cout<<"El autonomo se ha movido a la "<< direccion<< distancia<< "metros"<< "por"<< tiempo<< "segundos"<<std::endl; 
 
 }
 
 void boton9(){
-std::cout<<"Boton 9: Lado izquierd del autonomo"<<std::endl; 
-
-    
+std::cout<<"Boton 9: Lado izquierdO del autonomo"<<std::endl; 
+std::cout<<"Ingrese la direccion: "<<std::endl; 
+std::cin>>direccion; 
+std::cout<<"Ingrese el tiempo: "<<std::endl; 
+std::cin>>tiempo; 
+std::cout<<"Ingrese la distancia: "<<std::endl; 
+std::cin>>distancia; 
+std::cout<<""<<std::endl; 
+std::cout<<"El autonomo se ha movido a la "<< direccion<< distancia<< "metros"<< "por"<< tiempo<< "segundos"<<std::endl; 
+   
 }
 
 void boton89(){
 std::cout<<"Boton 89: Anvanze del autonomo"<<std::endl; 
-
+std::cout<<"Ingrese la direccion: "<<std::endl; 
+std::cin>>direccion; 
+std::cout<<"Ingrese el tiempo: "<<std::endl; 
+std::cin>>tiempo; 
+std::cout<<"Ingrese la distancia: "<<std::endl; 
+std::cin>>distancia; 
+std::cout<<""<<std::endl; 
+std::cout<<"El autonomo se ha movido a la "<< direccion<< distancia<< "metros"<< "por"<< tiempo<< "segundos"<<std::endl; 
 
 }
 
@@ -122,17 +142,16 @@ std::cout<<""<<std::endl;
 std::cout<<"Elige un boton"<<std::endl;
 std::cin>> boton; 
 
-if (boton == 8){
- boton8(); 
-}
+  if (boton == 8){
+    boton8();
+    }
+  else if (boton == 9){
+    boton9();
+  }
 
-else if(boton == 9){
- boton9(); 
-}
-else if (boton == 89){
 
-boton89();
-}
+
+
 
 
 
