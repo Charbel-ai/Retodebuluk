@@ -7,46 +7,45 @@ int distancia;
 std::string direccion;  
 char seriedeaccion;
 char seriedeaccion2 = std::toupper(seriedeaccion);
-int boton;
+char boton;
 
-
-void boton8(){
-
-std::cout<<"Boton 8: Lado derecho del autonomo"<<std::endl; 
-std::cout<<"Ingrese la direccion: "<<std::endl; 
-std::cin>>direccion; 
-std::cout<<"Ingrese el tiempo: "<<std::endl; 
-std::cin>>tiempo; 
-std::cout<<"Ingrese la distancia: "<<std::endl; 
-std::cin>>distancia; 
-std::cout<<""<<std::endl; 
-std::cout<<"El autonomo se ha movido a la "<< direccion<< distancia<< "metros"<< "por"<< tiempo<< "segundos"<<std::endl; 
+ 
+void botonA (){
+  std::cout<<"Boton A: Lado derecho del autonomo"<<std::endl; 
+  std::cout<<"Ingrese la direccion: "<<std::endl; 
+  std::cin>>direccion; 
+  std::cout<<"Ingrese el tiempo: "<<std::endl; 
+  std::cin>>tiempo; 
+  std::cout<<"Ingrese la distancia: "<<std::endl; 
+  std::cin>>distancia; 
+  std::cout<<""<<std::endl; 
+  std::cout<<"El autonomo se ha movido a la "<<  direccion<< " " << distancia<< " metros, por "<< tiempo << " segundos"<<std::endl; 
 
 }
 
-void boton9(){
-std::cout<<"Boton 9: Lado izquierdO del autonomo"<<std::endl; 
-std::cout<<"Ingrese la direccion: "<<std::endl; 
-std::cin>>direccion; 
-std::cout<<"Ingrese el tiempo: "<<std::endl; 
-std::cin>>tiempo; 
-std::cout<<"Ingrese la distancia: "<<std::endl; 
-std::cin>>distancia; 
-std::cout<<""<<std::endl; 
-std::cout<<"El autonomo se ha movido a la "<< direccion<< distancia<< "metros"<< "por"<< tiempo<< "segundos"<<std::endl; 
+void botonB(){
+  std::cout<<"Boton B: Lado izquierdo del autonomo"<<std::endl; 
+  std::cout<<"Ingrese la direccion: "<<std::endl; 
+  std::cin>>direccion; 
+  std::cout<<"Ingrese el tiempo: "<<std::endl; 
+  std::cin>>tiempo; 
+  std::cout<<"Ingrese la distancia: "<<std::endl; 
+  std::cin>>distancia; 
+  std::cout<<""<<std::endl; 
+  std::cout<<"El autonomo se ha movido a la "<<  direccion<< " " << distancia<< " metros, por "<< tiempo << " segundos"<<std::endl; 
    
 }
 
-void boton89(){
-std::cout<<"Boton 89: Anvanze del autonomo"<<std::endl; 
-std::cout<<"Ingrese la direccion: "<<std::endl; 
-std::cin>>direccion; 
-std::cout<<"Ingrese el tiempo: "<<std::endl; 
-std::cin>>tiempo; 
-std::cout<<"Ingrese la distancia: "<<std::endl; 
-std::cin>>distancia; 
-std::cout<<""<<std::endl; 
-std::cout<<"El autonomo se ha movido a la "<< direccion<< distancia<< "metros"<< "por"<< tiempo<< "segundos"<<std::endl; 
+void botonAB(){
+  std::cout<<"Boton AB: Anvanze del autonomo"<<std::endl; 
+  std::cout<<"Ingrese la direccion: "<<std::endl; 
+  std::cin>>direccion; 
+  std::cout<<"Ingrese el tiempo: "<<std::endl; 
+  std::cin>>tiempo; 
+  std::cout<<"Ingrese la distancia: "<<std::endl; 
+  std::cin>>distancia; 
+  std::cout<<""<<std::endl; 
+  std::cout<<"El autonomo se ha movido a la "<<  direccion<< " " << distancia<< " metros, por "<< tiempo << " segundos"<<std::endl; 
 
 }
 
@@ -120,34 +119,45 @@ while ('B' != seriedeaccion2 != 'A' && 'C' != seriedeaccion2);
 
 //Inicio del programa teleoperado
 std::cout<<""<<std::endl; 
-std::cout<<"Ingrese T para pasar al programa teleoperado"<<std::endl; 
-std::cin>> boton;
-  char boton2 = std::toupper(boton);
+std::cout<<"El programa autonomo ha terminado"<<std::endl; 
+std::cout<<"Inicion del programa teleoperado"<<std::endl; 
 
-if (boton2 == 'T' ){
-std::cout<<"El programa teleoperado ha empezado"<<std::endl; 
-}
- 
 std:: cout<< " "<<std::endl; 
+
  //Menu de botones 
 std::cout<<"Exiten tres botones"<<std::endl; 
-std::cout<<"El boton 8: Controla el lado derecho de un autonomo"<<std::endl; 
-std::cout<<"El boton 9: Controla el lado izquierdo del autonomo"<<std::endl; 
-std::cout<<"El boton 89: Seleccionas los dos botones anteriores, haciendo que el autonomo avanze completamente "<<std::endl; 
-std::cout<<"El boton 4: Al estar enfrente de una pieza este la recoje y cambia de posicion"<<std::endl; 
-std::cout<<"El boton 5: Libera las llantas del autonomo"<<std::endl; 
-std::cout<<"El boton 6: Al ubicar la llantas, estira "<<std::endl; 
+std::cout<<"El boton A: Controla el lado derecho de un autonomo"<<std::endl; 
+std::cout<<"El boton B: Controla el lado izquierdo del autonomo"<<std::endl; 
+std::cout<<"El boton AB: Seleccionas los dos botones anteriores, haciendo que el autonomo avanze completamente "<<std::endl; 
 std::cout<<""<<std::endl;
 
 std::cout<<"Elige un boton"<<std::endl;
 std::cin>> boton; 
+char boton2 = std::toupper(boton);
 
-  if (boton == 8){
-    boton8();
-    }
-  else if (boton == 9){
-    boton9();
-  }
+
+if (boton2 == 'A'){
+  botonA();
+}
+
+else if (boton2 == 'B'){
+ botonB();
+}
+
+else if (boton2 == 'AB'){
+ botonAB();
+}
+
+else if ('B' != boton2 != 'A' && 'C' != boton2){
+  std::cout<< "Ingrese un boton que exista"<<std::endl; 
+}
+
+//Talvez, como no lo piden, quitar la opcion de distancia en las funciones
+//Falta revisar: -que el programa vaya sumando el tiempo entre el programa autonomo y lo que ingrese el usuario en la parte teleoperada
+//-Acomodar el programa para que una parte quite y ponga las llantas
+//Que el tiempo de teleoperado (2:45) se complete correctamente sumando la parte autonoma
+//Cuando quede cierto tiempo, mostrar que acciones realizar, segun recomendaciones de scouting
+//Talvez agregar el aproximado de los puntos que realizo el programa
 
 
 
