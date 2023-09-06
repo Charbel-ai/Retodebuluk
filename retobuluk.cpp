@@ -2,6 +2,7 @@
 #include <string>
 
 int tiempototal; 
+int tiempototla; 
 int tiempo;
 int distancia; 
 std::string direccion;  
@@ -124,6 +125,7 @@ std::cout<<"Inicion del programa teleoperado"<<std::endl;
 
 std:: cout<< " "<<std::endl; 
 
+do{
  //Menu de botones 
 std::cout<<"Exiten tres botones"<<std::endl; 
 std::cout<<"El boton A: Controla el lado derecho de un autonomo"<<std::endl; 
@@ -160,7 +162,8 @@ else if ('B' != boton2 != 'A' && 'C' != boton2){
 //Talvez agregar el aproximado de los puntos que realizo el programa
 
 
-
+}
+while ();
 
 
 
