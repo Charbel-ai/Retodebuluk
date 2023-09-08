@@ -142,10 +142,6 @@ else if ('B' != boton2 != 'A'){
 tiempototal += tiempo; 
 std::cout<<"El tiempo de teleoperado es de "<< tiempototal << " segundos "<<std::endl;
 
-if (tiempototal >= 117){
-  std::cout<<"Quedan 30 segundos para que termine el periodo teleoperado, te recomendamos avanzar a la linea de salida"<<std::endl; 
-
-}
 if (tiempototal > 147){
   std::cout<<"El tiempo de teleoperado ha sido rebasado"<<std::endl; 
   break;
