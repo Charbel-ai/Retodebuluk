@@ -2,53 +2,43 @@
 #include <string>
 
 int tiempototal; 
-int tiempototla; 
+int tiempolimite = 147;
 int tiempo;
-int distancia; 
+int grados; 
 std::string direccion;  
 char seriedeaccion;
 char seriedeaccion2 = std::toupper(seriedeaccion);
 char boton;
 
- 
+// El boton A esta conectado a los controladores del 1 al 4, conectados a motores del chasis, es un spark max
+// Este boton esta conectado al puerto CAN del roborio 
 void botonA (){
-  std::cout<<"Boton A: Lado derecho del autonomo"<<std::endl; 
+  std::cout<<"Boton A: Control del movimiento del autonomo (adelante,atras,izquierda,derecha)"<<std::endl; 
   std::cout<<"Ingrese la direccion: "<<std::endl; 
   std::cin>>direccion; 
-  std::cout<<"Ingrese el tiempo: "<<std::endl; 
+  std::cout<<"Ingrese el tiempo en segundos: "<<std::endl; 
   std::cin>>tiempo; 
-  std::cout<<"Ingrese la distancia: "<<std::endl; 
-  std::cin>>distancia; 
   std::cout<<""<<std::endl; 
-  std::cout<<"El autonomo se ha movido a la "<<  direccion<< " " << distancia<< " metros, por "<< tiempo << " segundos"<<std::endl; 
+  std::cout<<"El autonomo se ha movido hacia "<<  direccion << " por "<< tiempo << " segundos"<<std::endl; 
 
 }
 
+//El boton B esta conectado a el controlador numero 5, para el motor planetario, es un talon srx
+//Esta conectado al puerto CAN del roborio
 void botonB(){
-  std::cout<<"Boton B: Lado izquierdo del autonomo"<<std::endl; 
+  std::cout<<"Boton B: Controla el giro del autonomo"<<std::endl; 
   std::cout<<"Ingrese la direccion: "<<std::endl; 
   std::cin>>direccion; 
-  std::cout<<"Ingrese el tiempo: "<<std::endl; 
+  std::cout<<"Ingrese el tiempo en segundos: "<<std::endl; 
   std::cin>>tiempo; 
-  std::cout<<"Ingrese la distancia: "<<std::endl; 
-  std::cin>>distancia; 
+  std::cout<<"Ingrese los grados que gire el autonomo: "<<std::endl; 
+  std::cin>>grados; 
   std::cout<<""<<std::endl; 
-  std::cout<<"El autonomo se ha movido a la "<<  direccion<< " " << distancia<< " metros, por "<< tiempo << " segundos"<<std::endl; 
+  std::cout<<"El autonomo a girado hacia la "<<  direccion << " " << grados << " grados, por "<< tiempo << " segundos"<<std::endl; 
    
 }
 
-void botonAB(){
-  std::cout<<"Boton AB: Anvanze del autonomo"<<std::endl; 
-  std::cout<<"Ingrese la direccion: "<<std::endl; 
-  std::cin>>direccion; 
-  std::cout<<"Ingrese el tiempo: "<<std::endl; 
-  std::cin>>tiempo; 
-  std::cout<<"Ingrese la distancia: "<<std::endl; 
-  std::cin>>distancia; 
-  std::cout<<""<<std::endl; 
-  std::cout<<"El autonomo se ha movido a la "<<  direccion<< " " << distancia<< " metros, por "<< tiempo << " segundos"<<std::endl; 
 
-}
 
 int main(){
 
@@ -125,18 +115,18 @@ std::cout<<"Inicion del programa teleoperado"<<std::endl;
 
 std:: cout<< " "<<std::endl; 
 
-do{
- //Menu de botones 
+//Menu de botones 
 std::cout<<"Exiten tres botones"<<std::endl; 
-std::cout<<"El boton A: Controla el lado derecho de un autonomo"<<std::endl; 
-std::cout<<"El boton B: Controla el lado izquierdo del autonomo"<<std::endl; 
-std::cout<<"El boton AB: Seleccionas los dos botones anteriores, haciendo que el autonomo avanze completamente "<<std::endl; 
+std::cout<<"El boton A: Controla el avanze del robot (adelante,atras,izquierda,derecha)"<<std::endl; 
+std::cout<<"El boton B: Controla el giro del robot"<<std::endl; 
 std::cout<<""<<std::endl;
-
+ 
+ 
+//Esta parte del codigo se repetira hasta que el tiempo de teleoperado sea rebasado o se complete
+ while(tiempototal <= tiempolimite ){
 std::cout<<"Elige un boton"<<std::endl;
 std::cin>> boton; 
 char boton2 = std::toupper(boton);
-
 
 if (boton2 == 'A'){
   botonA();
@@ -145,14 +135,31 @@ if (boton2 == 'A'){
 else if (boton2 == 'B'){
  botonB();
 }
-
-else if (boton2 == 'AB'){
- botonAB();
-}
-
-else if ('B' != boton2 != 'A' && 'C' != boton2){
+else if ('B' != boton2 != 'A'){
   std::cout<< "Ingrese un boton que exista"<<std::endl; 
 }
+
+tiempototal += tiempo; 
+std::cout<<"El tiempo de teleoperado es de "<< tiempototal << " segundos "<<std::endl;
+
+
+if (tiempototal > 147){
+  std::cout<<"El tiempo de teleoperado ha sido rebasado"<<std::endl; 
+  break;
+ }
+
+
+ }
+ 
+ return 0; 
+}
+
+ 
+ 
+
+
+
+
 
 //Talvez, como no lo piden, quitar la opcion de distancia en las funciones
 //Falta revisar: -que el programa vaya sumando el tiempo entre el programa autonomo y lo que ingrese el usuario en la parte teleoperada
@@ -162,12 +169,5 @@ else if ('B' != boton2 != 'A' && 'C' != boton2){
 //Talvez agregar el aproximado de los puntos que realizo el programa
 
 
-}
-while ();
 
 
-
-
-
-return 0;
-}
