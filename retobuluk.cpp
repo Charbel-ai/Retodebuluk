@@ -142,7 +142,10 @@ else if ('B' != boton2 != 'A'){
 tiempototal += tiempo; 
 std::cout<<"El tiempo de teleoperado es de "<< tiempototal << " segundos "<<std::endl;
 
+if (tiempototal >= 117){
+  std::cout<<"Quedan 30 segundos para que termine el periodo teleoperado, te recomendamos avanzar a la linea de salida"<<std::endl; 
 
+}
 if (tiempototal > 147){
   std::cout<<"El tiempo de teleoperado ha sido rebasado"<<std::endl; 
   break;
@@ -161,12 +164,8 @@ if (tiempototal > 147){
 
 
 
-//Talvez, como no lo piden, quitar la opcion de distancia en las funciones
-//Falta revisar: -que el programa vaya sumando el tiempo entre el programa autonomo y lo que ingrese el usuario en la parte teleoperada
 //-Acomodar el programa para que una parte quite y ponga las llantas
-//Que el tiempo de teleoperado (2:45) se complete correctamente sumando la parte autonoma
 //Cuando quede cierto tiempo, mostrar que acciones realizar, segun recomendaciones de scouting
-//Talvez agregar el aproximado de los puntos que realizo el programa
 
 
 
