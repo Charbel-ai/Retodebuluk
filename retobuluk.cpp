@@ -166,7 +166,7 @@ std:: cout<< " "<<std::endl;
 //Menu de botones 
 //Esta parte del codigo se repetira hasta que el tiempo de teleoperado sea rebasado o se complete
  while(tiempototal <= tiempolimite ){
-
+std::cout<<""<<std::endl; 
 std::cout<<"------ BOTONES ------"<<std::endl; 
 std::cout<<"El boton A: Controla el avanze del robot (adelante,atras,izquierda,derecha)"<<std::endl; 
 std::cout<<"El boton B: Controla el giro del robot"<<std::endl; 
