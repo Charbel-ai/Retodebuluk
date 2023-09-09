@@ -55,7 +55,7 @@ std:: cout<< " "<<std::endl;
 do{
 std:: cout<< "Opcion A: Tarda 10 segundo en realizarse y realiza funciones basicas del robot "<<std::endl; 
 std:: cout<< "Opcion B: Tarda 13 segundos en relizarse y realiza funciones basicas del robot"<<std::endl; 
-std:: cout<< "Opcion C: Tarda 15 segundo en relizarse y levanta la llanta con un elevador para despues colocarla"<<std::endl; 
+std:: cout<< "Opcion C: Tarda 15 segundo en relizarse, indentifica y coloca una llanta"<<std::endl; 
 std:: cout<< " "<<std::endl; 
 
 std:: cout<< "Elige tu opcion: "<<std::endl; 
@@ -68,10 +68,10 @@ std:: cin>> seriedeaccion;
 if (seriedeaccion2 == 'A'){
 
 tiempototal = 10; 
-std:: cout<<"El autonomo avanzo tres metros, tardo: 3 segundos"<<std::endl; 
-std:: cout<<"El autonomo se detuvo y gire 180 grados, volviendo a la direccion donde empezo, tardo: 4 segundos"<<std::endl; 
-std:: cout<<"El autonomo avanzo tres metros volviendo al lugar donde empezo, tardo: 3 segundos"<<std::endl; 
-std:: cout<<"El tiempo total de accion fue de: "<< tiempototal<<" segundos"<<std::endl; 
+std:: cout<<"El robot avanzo tres metros, tardo: 3 segundos"<<std::endl; 
+std:: cout<<"El robot se detuvo y gire 180 grados, tardo: 4 segundos"<<std::endl; 
+std:: cout<<"El robot avanzo tres metros volviendo al lugar donde empezo, tardo: 3 segundos"<<std::endl; 
+std:: cout<<"El robot total de accion fue de: "<< tiempototal<<" segundos"<<std::endl; 
 std:: cout<<"Quedan 5 segundos del programa autonomo"<<std::endl; 
 break; 
 }
@@ -80,26 +80,29 @@ break;
 // Despues el autonomo retrodecera 2 metros y avanzara 4 metros.
 else if (seriedeaccion2 == 'B'){
 tiempototal = 13; 
-std:: cout<<"El autonomo avanzo cuatro metros, tardo: 4 segundos"<<std::endl; 
-std:: cout<<"El autonomo se detuvo y gire 180 grados, volviendo a la direccion donde empezo, tardo: 3 segundos"<<std::endl; 
-std:: cout<<"El autonomo retrocedio 2 metros, tardo: 2 segundos"<<std::endl; 
-std:: cout<<"El autonomo avanzo 4 metros, tardo: 4 segundos"<<std::endl; 
+std:: cout<<"El robot avanzo cuatro metros, tardo: 4 segundos"<<std::endl; 
+std:: cout<<"El robot se detuvo y gire 180 grados, tardo: 3 segundos"<<std::endl; 
+std:: cout<<"El robot retrocedio 2 metros, tardo: 2 segundos"<<std::endl; 
+std:: cout<<"El robot avanzo 4 metros, tardo: 4 segundos"<<std::endl; 
 std:: cout<<"El tiempo total de accion fue de: "<< tiempototal<< " segundos"<<std::endl; 
 std:: cout<<"Quedan 2 segundos del programa autonomo"<<std::endl; 
 break; 
 }
 
-//La serie de accion C, avanzara 5 metros y se detendra.
-//Despues girara 90 grados a la derecha
-//Avanzara 4 metros y se detendra
-//Girara 180 grados y avanzara 4 metros 
+//La serie de accion C, primero identificara donde esta la llanta
+//Despues  el robot se coloca en posicon a la llanta
+//Al estar en posicion, los pistones se estiran y con el velcro se pegan a la llanta, se contraen y posicionan la llanta
+//Al tener la llanta, el elevador empieza a funcionar y eleva la llanta a la altura del coche
+// Al estar a la altura, los pistones se vuelven a estirar y pegan la llanta al coche con el velcro
 else if (seriedeaccion2 == 'C'){
 tiempototal = 15; 
-std:: cout<<"El autonomo avanzo cinco metros, tardo: 5 segundos"<<std::endl; 
-std:: cout<<"El autonomo se detuvo y giro 90 grados hacia la derecha,tardo: 3 segundos"<<std::endl; 
-std:: cout<<"El autonomo avanzo 4 metros, tardo: 4 segundos"<<std::endl; 
-std:: cout<<"El autonomo se detuvo y giro 180 grados, tardo: 4 segundos"<<std::endl; 
-
+std:: cout<<"El robot ha identificado la posicion de la llanta y se ha colocado frente a ella, tardo: 1 segundos"<<std::endl; 
+std:: cout<<"Los pistones se han estirado, pegandose a la llanta,tardo: 2 segundos"<<std::endl; 
+std:: cout<<"Los pistones se han contraido y han dejado la llanta en posicion con el elevador, tardo: 3 segundos"<<std::endl; 
+std:: cout<<"El robot ha indentificado el coche y se ha puesto en posicion a este, tardo: 2 segundos"<<std::endl; 
+std:: cout<<"El elevador ha empezado a funcionar, a eleado la llanta a la altura del coche, tardo: 3 segundos"<<std::endl; 
+std:: cout<<"Los pistones se han estirado y pegado la llanta al coche, tardo: 3 segundos"<<std::endl; 
+std:: cout<<"Los pistones se han contraido, tardo: 1 segundos"<<std::endl; 
 std:: cout<<"El tiempo total de accion fue de: "<< tiempototal<< " segundos"<<std::endl; 
 std:: cout<<"El tiempo de autonomo fue terminado completamente"<<std::endl; 
 break; 
