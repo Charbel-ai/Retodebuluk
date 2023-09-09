@@ -204,6 +204,8 @@ std::cout<<"El tiempo de teleoperado es de "<< tiempototal << " segundos "<<std:
 
 if (tiempototal > 147){
   std::cout<<"El tiempo de teleoperado ha sido rebasado"<<std::endl; 
+  std::cout<<"El programa ha terminado"<<std::endl; 
+
   break;
  }
 
