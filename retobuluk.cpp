@@ -1,10 +1,6 @@
 #include <iostream>
 #include <string>
 
-//Arreglar:
-//Agregar mecanismos, si ingresa algo que no exista tanto en parte autonoma como teleoperada que lo devuelva
-//Mostrar otra vez los botones
-//Investigar como funcionan los pistones para los mecanismos 
 int tiempototal; 
 int tiempolimite = 147;
 int tiempo;
