@@ -66,7 +66,7 @@ void botonC(){
   std::cout<<"El boton C: Estira los pistones y toma una llanta"<<std::endl; 
   std::cout<<"Los pistones se han estirado"<<std::endl; 
   std::cout<<"Has tomado una llanta"<<std::endl; 
-  std::cout<<"El tiempo de duracion fue de: 1 segundos  "<<std::endl; 
+  std::cout<<"El tiempo de duracion fue de: 1 segundo "<<std::endl; 
   std::cout<<"Escoge el boton D para contraer los pistones y colocar la llanta en el elevador "<<std::endl;
   tiempo = 1; 
 }
@@ -74,7 +74,7 @@ void botonD(){
   std::cout<<"El boton D: Contrae los pistones y coloca la llanta en el elevador "<<std::endl; 
   std::cout<<"Los pistones se han contraido : "<<std::endl; 
   std::cout<<"Has colocado una llanta en el elevador"<<std::endl; 
-  std::cout<<"El tiempo de duracion fue de: 3 segundo  "<<std::endl; 
+  std::cout<<"El tiempo de duracion fue de: 3 segundos  "<<std::endl; 
   tiempo = 3; 
  
 }
