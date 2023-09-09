@@ -1,6 +1,10 @@
 #include <iostream>
 #include <string>
 
+//Arreglar:
+//Agregar mecanismos, si ingresa algo que no exista tanto en parte autonoma como teleoperada que lo devuelva
+//Mostrar otra vez los botones
+//Investigar como funcionan los pistones para los mecanismos 
 int tiempototal; 
 int tiempolimite = 147;
 int tiempo;
@@ -9,6 +13,7 @@ std::string direccion;
 char seriedeaccion;
 char seriedeaccion2 = std::toupper(seriedeaccion);
 char boton;
+
 
 // El boton A esta conectado a los controladores del 1 al 4, conectados a motores del chasis, es un spark max
 // Este boton esta conectado al puerto CAN del roborio 
@@ -42,14 +47,15 @@ void botonB(){
 
 int main(){
 
-std:: cout<< "Incio del periodo autonomo del automata "<<std::endl; 
+std:: cout<< "------ RETO BULUK ------"<<std::endl; 
+std:: cout<< "Incio del periodo autonomo del robot "<<std::endl; 
 std::cout<< "Existen tres opciones: "<<std::endl;
 std:: cout<< " "<<std::endl; 
 
 do{
-std:: cout<< "Opcion A: Tarda 10 segundo en realizarse "<<std::endl; 
-std:: cout<< "Opcion B: Tarda 13 segundos en relizarse "<<std::endl; 
-std:: cout<< "Opcion C: Tarda 15 segundo en relizarse "<<std::endl; 
+std:: cout<< "Opcion A: Tarda 10 segundo en realizarse y realiza funciones basicas del robot "<<std::endl; 
+std:: cout<< "Opcion B: Tarda 13 segundos en relizarse y realiza funciones basicas del robot"<<std::endl; 
+std:: cout<< "Opcion C: Tarda 15 segundo en relizarse y levanta la llanta con un elevador para despues colocarla"<<std::endl; 
 std:: cout<< " "<<std::endl; 
 
 std:: cout<< "Elige tu opcion: "<<std::endl; 
@@ -99,11 +105,11 @@ std:: cout<<"El tiempo de autonomo fue terminado completamente"<<std::endl;
 break; 
 }
 
-else if ( 'B' != seriedeaccion2 != 'A' && 'C' != seriedeaccion2){
+if ( ( seriedeaccion2 != 'B') && (seriedeaccion2 != 'A') && (seriedeaccion2 != 'C')){
     std::cout<<"Ingrese una opcion que exista"<<std::endl; 
 }
 }
-while ('B' != seriedeaccion2 != 'A' && 'C' != seriedeaccion2);
+while ((seriedeaccion2 != 'B') && (seriedeaccion2!= 'A') && (seriedeaccion2 != 'C'));
 
 
 
@@ -116,7 +122,7 @@ std::cout<<"Inicion del programa teleoperado"<<std::endl;
 std:: cout<< " "<<std::endl; 
 
 //Menu de botones 
-std::cout<<"Exiten tres botones"<<std::endl; 
+std::cout<<"Exiten dos botones"<<std::endl; 
 std::cout<<"El boton A: Controla el avanze del robot (adelante,atras,izquierda,derecha)"<<std::endl; 
 std::cout<<"El boton B: Controla el giro del robot"<<std::endl; 
 std::cout<<""<<std::endl;
@@ -148,7 +154,7 @@ if (tiempototal > 147){
  }
 
 
- }
+ }  
  
  return 0; 
 }
