@@ -1,10 +1,6 @@
 #include <iostream>
 #include <string>
 
-//Arreglar:
-//Agregar mecanismos, si ingresa algo que no exista tanto en parte autonoma como teleoperada que lo devuelva
-//Mostrar otra vez los botones
-//Investigar como funcionan los pistones para los mecanismos 
 int tiempototal; 
 int tiempolimite = 147;
 int tiempo;
@@ -19,17 +15,17 @@ char boton;
 // El boton A esta conectado a los controladores del 1 al 4, conectados a motores del chasis, es un spark max
 // Este boton esta conectado al puerto CAN del roborio 
 void botonA (){
-  std::cout<<"Boton A: Control del movimiento del autonomo (adelante,atras,izquierda,derecha)"<<std::endl; 
+  std::cout<<"Boton A: Control del movimiento del autonomo (adelante,atras)"<<std::endl; 
    
    //Codigo que se repite hasta que el usuario ingrese una direccion valida 
    do{
   std::cout<<"Ingrese la direccion: "<<std::endl; 
   std::cin>>direccion; 
-  if( (direccion != "izquierda" ) && (direccion != "derecha" ) && (direccion != "atras" ) && (direccion != "adelante" )){
+  if((direccion != "atras" ) && (direccion != "adelante" )){
     std::cout<<"Ingrese una direccion que exista"<<std::endl; 
   }
    }
-   while ((direccion != "izquierda" ) && (direccion != "derecha" ) && (direccion != "atras" ) && (direccion != "adelante" )); 
+   while ((direccion != "atras" ) && (direccion != "adelante" )); 
 
   std::cout<<"Ingrese el tiempo en segundos: "<<std::endl; 
   std::cin>>tiempo; 
@@ -47,11 +43,11 @@ void botonB(){
    do{
   std::cout<<"Ingrese la direccion: "<<std::endl; 
   std::cin>>direccion; 
-  if( (direccion != "izquierda" ) && (direccion != "derecha" ) && (direccion != "atras" ) && (direccion != "adelante" )){
+  if( (direccion != "izquierda" ) && (direccion != "derecha" )){
     std::cout<<"Ingrese una direccion que exista"<<std::endl; 
   }
    }
-   while ((direccion != "izquierda" ) && (direccion != "derecha" ) && (direccion != "atras" ) && (direccion != "adelante" )); 
+   while ((direccion != "izquierda" ) && (direccion != "derecha" )); 
 
   std::cout<<"Ingrese el tiempo en segundos: "<<std::endl; 
   std::cin>>tiempo; 
@@ -78,6 +74,10 @@ void botonD(){
   tiempo = 3; 
  
 }
+//Tendria que cambiarle el nombre, no ponerle boton, sin no el nombre que tiene (preguntar a robles)
+//Designar boton A, con su nuevo nombre que solo se mueva hacia adelante y hacia atras 
+//El boton B, solo se mueve hacia la izquierda o la derecha segun la direccion que de el usuario y el angulo
+//Preguntar bien la parte que de que los botones se evaluan como falso y verdadero
 
 
 
@@ -168,7 +168,7 @@ std:: cout<< " "<<std::endl;
  while(tiempototal <= tiempolimite ){
 std::cout<<""<<std::endl; 
 std::cout<<"------ BOTONES ------"<<std::endl; 
-std::cout<<"El boton A: Controla el avanze del robot (adelante,atras,izquierda,derecha)"<<std::endl; 
+std::cout<<"El boton A: Controla el avanze del robot (adelante,atras)"<<std::endl; 
 std::cout<<"El boton B: Controla el giro del robot"<<std::endl; 
 std::cout<<"El boton C: Estira los pistones"<<std::endl; 
 std::cout<<"El boton D: Contrae los pistones"<<std::endl; 
