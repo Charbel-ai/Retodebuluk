@@ -37,7 +37,7 @@ void botonA (){
 //El boton B esta conectado a el controlador numero 5, para el motor planetario, es un talon srx
 //Esta conectado al puerto CAN del roborio
 void botonB(){
-  std::cout<<"Boton B: Controla el giro del autonomo"<<std::endl; 
+  std::cout<<"Boton B: Controla el giro del autonomo (izquierda o derecha)"<<std::endl; 
  
   //Codigo que se repite hasta que el usuario ingrese una direccion valida 
    do{
@@ -169,7 +169,7 @@ std:: cout<< " "<<std::endl;
 std::cout<<""<<std::endl; 
 std::cout<<"------ BOTONES ------"<<std::endl; 
 std::cout<<"El boton A: Controla el avanze del robot (adelante,atras)"<<std::endl; 
-std::cout<<"El boton B: Controla el giro del robot"<<std::endl; 
+std::cout<<"El boton B: Controla el giro del robot (izquierda o derecha)"<<std::endl; 
 std::cout<<"El boton C: Estira los pistones"<<std::endl; 
 std::cout<<"El boton D: Contrae los pistones"<<std::endl; 
 std::cout<<""<<std::endl;
